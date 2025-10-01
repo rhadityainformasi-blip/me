@@ -1,0 +1,156 @@
+/* Import font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* --- Body & Layout --- */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #000000 0%, #1a0d0d 100%);
+  color: #f5e6e6;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  background: #110000;
+  padding: 25px 20px;
+  text-align: center;
+  border-bottom: 3px solid #cc0000;
+  animation: slideIn 1s ease-out;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #cc0000;
+  letter-spacing: 3px;
+  animation: glowPulse 3s infinite;
+}
+
+header p {
+  color: #f5e6e6cc;
+  font-style: italic;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  border-left: 6px solid #cc0000;
+  padding-left: 12px;
+  color: #f5e6e6;
+}
+
+/* --- Profile Section --- */
+.profile-photo {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  box-shadow: 0 0 12px #cc0000aa;
+  animation: zoomIn 1s ease forwards;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #110000;
+  margin: 10px 0;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #cc0000aa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #cc0000dd;
+}
+
+/* --- Gallery --- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery figure {
+  background: #110000;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #cc0000aa;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+}
+
+.gallery figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #cc0000dd;
+}
+
+.gallery figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery figure figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #f5e6e6cc;
+}
+
+/* --- Reveal Animasi --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active,
+.gallery figure.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* --- Keyframes --- */
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 6px #cc0000aa; }
+  50% { text-shadow: 0 0 20px #cc0000, 0 0 40px #cc0000; }
+  100% { text-shadow: 0 0 6px #cc0000aa; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #110000;
+  border-top: 3px solid #cc0000;
+  color: #f5e6e6cc;
+  margin-top: 40px;
+}
