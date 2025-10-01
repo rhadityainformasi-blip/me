@@ -1,4 +1,3 @@
-// Animasi reveal saat scroll
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal, .gallery figure");
   reveals.forEach((el, i) => {
@@ -16,7 +15,6 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-// Lightbox zoom sertifikat
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const figures = document.querySelectorAll('.gallery figure img');
